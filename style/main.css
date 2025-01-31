@@ -3,49 +3,44 @@
 .main-container {
     min-height: 100%;
     min-width: 75%;
-    max-width: 1500px;
+    max-width: 75%;
     background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     box-sizing: border-box;
+    padding: 0 10%;
 }
 
 .name-title {
     max-width: 100%;
-    text-align: center; /* centraliza texto */
+    text-align: center;
 }
 
 .form-bar {
-    display: flex;
-    width: 100%;
-    justify-content: center; /* centraliza a barra de formulário */
-    margin: 0;
-}
-
-#search-button {
-    display: flex;
-    min-height: 48px;
-    min-width: 48px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 41%;
+    width: auto;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    height: auto;
+    grid-row: 2;
 }
 
-/* Adiciona overflow-x para evitar scroll horizontal */
 #search-input {
-    width: 100%;
-    height: 48px;
+    box-sizing: border-box;
+    width: 55%;
+    height: 80px;
     display: flex;
     align-items: center;
     background-color: blue;
     border-radius: 5px;
     padding: 0 8px;
     gap: 8px;
-    margin: 0;
+    margin-bottom: 17%;
+    margin-left: 45%;
 }
 
 #search-bar {
@@ -57,39 +52,175 @@
     background-image: url("../images/others/pokedex_da_silva.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 80%;
-    height: 840px;
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-size: contain;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1345 / 960;
     box-sizing: border-box;
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
 }
 
 .pokedex-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Divide igualmente em duas colunas */
-    gap: 20px; /* Espaçamento desejado entre colunas e linhas */
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 60% 40%;
     width: 100%;
-    height: 100%; /* Ocupa a altura total da #pokedex */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    height: 100%;
 }
 
 .info-poke {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Ajuste a distância entre os elementos internos */
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 15%;
+    margin-left: 20.5%;
+    margin-top: 46.5%;
+    margin-bottom: 15%;
 }
 
-.info-poke > div {
-    display: block;
+.info-poke div {
+    background-color: lightgray;
+    justify-items: center;
 }
+
+.info-poke h1 {
+    font-size: medium;
+}
+
+#div-img {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+#div-img > div {
+    aspect-ratio: 1 / 1;
+    width: 45%;
+    height: 45%;
+    background-color: red;
+    margin-bottom: 3%;
+    margin-left: 5%;
+}
+
+#alter_but {
+    display: flex;
+    background-color: green;
+}
+
+.controller {
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 125px;
+    margin-bottom: 37%;
+    margin-left: 18%;
+    background-color: #d30a40;
+}
+
+.directional {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.arrow {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #333; /* Cor escura para as setas */
+    margin: 8px;
+    border: 0;
+}
+
+.arrows-vertical {
+    height: 100%;
+    background-color: #444; /* Cor cinza escuro para a área vertical */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.up {
+    transform: rotate(0deg); 
+}
+
+.down {
+    transform: rotate(180deg); 
+}
+
+.left {
+    transform: rotate(-90deg); 
+}
+
+.right {
+    transform: rotate(90deg);
+}
+
+.box-arrow {
+    background-color: #444;
+    height: 35%;
+    display: flex;
+    border-left: 5%;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    transition: background-color 0.3s ease, box-shadow 0.1s ease;
+}
+
+.right-border {
+    border-top-right-radius: 5px; 
+    border-bottom-right-radius: 5px;
+}
+
+.left-border {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.box-arrow:active {
+    background-color: #3f3f3f;
+    box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.1s ease;
+
+    .arrow {
+        background-color: #2c2c2c;
+    }
+}
+
+@keyframes brilhinho {
+    0% {
+        box-shadow: 0 0 5px white;
+    }
+    50% {
+        box-shadow: 0 0 20px white;
+    }
+    100% {
+        box-shadow: 0 0 5px white;
+    }
+}
+
+.box-arrow:hover{
+    cursor: pointer;
+    .arrow {
+        cursor: pointer;
+    }
+}
+
+.box-arrow:not(:active) {
+    outline: none;
+    animation: brilhinho 1.5s infinite;
+}
+
+
+

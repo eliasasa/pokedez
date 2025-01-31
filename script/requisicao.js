@@ -12,7 +12,7 @@ async function sivenha(pokemon) {
     } catch (error) {
         console.error('Erro: ', error);
     }
-}
+};
 
 async function dados_basicos(event) {
     event.preventDefault()
@@ -24,6 +24,6 @@ async function dados_basicos(event) {
         document.write(`<p>${nome}<p>`);
         document.write(`<image src="${foto}"><image>`);
     }
-}
+};
 
 document.getElementById('search').addEventListener('submit', dados_basicos)
