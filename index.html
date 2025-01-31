@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex do Kaique</title>
     <link rel="stylesheet" href="./style/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Pixelify Sans' rel='stylesheet'>
 </head>
 <body>
     <div class="main-container">
@@ -14,65 +15,65 @@
         <div id="pokedex">
             <div class="pokedex-grid">
                 <div id="div-img">
-                    <h3>Nome</h3>
-                    <div></div>
+                    <div id="div-nome">
+                        <h2 id="poke-nome"></h2>
+                    </div>
+                    <div id="div-foto">
+                        <img id="sprite">
+                    </div>
                 </div>
                 <form class="form-bar">
                     <div id="search-input">
-                        <input type="text" id="search-bar" placeholder="Nome/ID">
+                        <input type="text" id="search-bar" placeholder="Nome/ID" oninput="dados_basicos(this)">
                     </div>
                     <div class="controller">
                         <div class="directional">
-                            <div class="box-arrow left-border">
-                                <button class="arrow left"></button>
+                            <div class="box-arrow left-border" onclick="diminuirValor()">
+                                <button type="button" class="arrow left"></button>
                             </div>
                             <div class="arrows-vertical">
                                 <div class="arrow up"></div>
                                 <div class="arrow down"></div>
                             </div>
-                            <div class="box-arrow right-border">
-                                <button class="arrow right"></button>
+                            <div class="box-arrow right-border" onclick="aumentarValor()">
+                                <button type="button" class="arrow right"></button>
                             </div>
                         </div>
                     </div>            
                 </form>
                 <div class="info-poke">
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>Type</p>
+                        <p class="info"id="tipo">?</p>
                     </div>
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>Defense</p>
+                        <p class="info" id="defesa">?</p>
                     </div>
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>Speed</p>
+                        <p class="info" id="speed">?</p>
                     </div>
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>HP</p>
+                        <p class="info" id="hp">?</p>
                     </div>
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>Special-Atk</p>
+                        <p class="info" id="Satk">?</p>
                     </div>
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>Attack</p>
+                        <p class="info" id="atk">?</p>
                     </div>
                     <div>
-                        <h1>Tipo</h1>
-                        <h1>?</h1>
+                        <p>Special-Def</p>
+                        <p class="info" id="Sdef">?</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <form id="search">
-        <input type="text" id="pokemun">
-        <button type="submit">pesquisar</button>
-    </form> -->
 </body>
 <script src="./script/requisicao.js"></script>
 </html>

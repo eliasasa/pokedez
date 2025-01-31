@@ -4,13 +4,13 @@
     min-height: 100%;
     min-width: 75%;
     max-width: 75%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     box-sizing: border-box;
     padding: 0 10%;
+    margin-top: 2%;
 }
 
 .name-title {
@@ -29,13 +29,24 @@
     grid-row: 2;
 }
 
+.search-input-error {
+    background-color: #400808 !important;
+    animation: brilinho-vermelho 1.5s infinite !important; 
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+}
+
+.search-bar-error {
+    color: #ff0000 !important;
+    caret-color: #ff0000;
+}
+
 #search-input {
     box-sizing: border-box;
     width: 55%;
     height: 80px;
     display: flex;
     align-items: center;
-    background-color: blue;
+    background-color: #084035;
     border-radius: 5px;
     padding: 0 8px;
     gap: 8px;
@@ -43,10 +54,52 @@
     margin-left: 45%;
 }
 
+@keyframes brilinho-vermelho {
+    0% {
+        box-shadow: 0 0 5px #FF0000;
+    }
+    50% {
+        box-shadow: 0 0 20px #FF0000;
+    }
+    100% {
+        box-shadow: 0 0 5px #FF0000;
+    }
+}
+
+@keyframes brilinho-verde {
+    0% {
+        box-shadow: 0 0 5px #00FF00;
+    }
+    50% {
+        box-shadow: 0 0 20px #00FF00;
+    }
+    100% {
+        box-shadow: 0 0 5px #00FF00;
+    }
+}
+
+#search-input:not(:hover) {
+    outline: none;
+    cursor: pointer;
+    animation: brilinho-verde 1.5s infinite;
+}
+
 #search-bar {
+    height: 100%;
     font-size: large;
     width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #00FF00; 
+    caret-color: #00FF00;
 }
+
+#search-bar::placeholder {
+    color: #00FF00; 
+    opacity: 0.5;
+}
+
 
 #pokedex {
     background-image: url("../images/others/pokedex_da_silva.jpg");
@@ -75,10 +128,12 @@
     margin-left: 20.5%;
     margin-top: 46.5%;
     margin-bottom: 15%;
+    background-color: #084035;
+    border-radius: 5px;
 }
 
 .info-poke div {
-    background-color: lightgray;
+    color: #00FF00;
     justify-items: center;
 }
 
@@ -99,13 +154,34 @@
     row-gap: 16px;
 }
 
-#div-img > div {
+#div-nome {
+    background-color: #e3e3e3;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+#div-foto {
+    display: flex;
     aspect-ratio: 1 / 1;
     width: 45%;
     height: 45%;
-    background-color: red;
     margin-bottom: 3%;
     margin-left: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+#div-foto > img {
+    height: 100%;
+    aspect-ratio: 1 /1 ;
+    display: none;
+    border: none; 
+    outline: none; 
+}
+
+#div-foto > img[src] {
+    display: block;
 }
 
 #alter_but {
@@ -137,14 +213,14 @@
     aspect-ratio: 1 / 1;
     position: relative;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    background-color: #333; /* Cor escura para as setas */
+    background-color: #333; 
     margin: 8px;
     border: 0;
 }
 
 .arrows-vertical {
     height: 100%;
-    background-color: #444; /* Cor cinza escuro para a área vertical */
+    background-color: #444;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -198,7 +274,7 @@
     }
 }
 
-@keyframes brilhinho {
+@keyframes brilinho {
     0% {
         box-shadow: 0 0 5px white;
     }
@@ -219,7 +295,11 @@
 
 .box-arrow:not(:active) {
     outline: none;
-    animation: brilhinho 1.5s infinite;
+    animation: brilinho 1.5s infinite;
+}
+
+.info {
+    color: white;
 }
 
 
