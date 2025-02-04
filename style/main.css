@@ -52,6 +52,9 @@
     gap: 8px;
     margin-bottom: 17%;
     margin-left: 45%;
+    outline: none;
+    cursor: pointer;
+    animation: brilinho-verde 1.5s infinite;
 }
 
 @keyframes brilinho-vermelho {
@@ -76,12 +79,6 @@
     100% {
         box-shadow: 0 0 5px #00FF00;
     }
-}
-
-#search-input:not(:hover) {
-    outline: none;
-    cursor: pointer;
-    animation: brilinho-verde 1.5s infinite;
 }
 
 #search-bar {
@@ -302,5 +299,111 @@
     color: white;
 }
 
+.toggle-player {
+    display: flex;
+    position: fixed;
+    top: 1%;
+    left: 0;
+    background-color: #084035;
+    color: #00FF00;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-player:hover {
+    background-color: #06715d;
+}
+
+.music-player {
+    position: fixed;
+    top: 56px;
+    left: -300px;
+    background-color: #084035;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    z-index: 1000;
+    font-family: 'Pixelify Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00FF00;
+    transition: left 0.5s ease;
+    width: 250px;
+    height: auto;
+}
+
+.music-player.show {
+    left: 10px;
+    width: 250px;
+    height: auto;
+}
+
+.music-player audio {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+#song-info {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+#song-title {
+    display: inline-block;
+    position: relative;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
 
 
+.control-button {
+    background-color: transparent;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #00FF00;
+    cursor: pointer;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-button:hover {
+    background-color: #333;
+    border-color: #00FF00;
+}
+
+.control-button svg {
+    fill: #00FF00; 
+    width: 24px; 
+    height: 24px; 
+    color: #00FF00;
+}
+
+#butoins {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+} 
+
+.esquerda svg {
+    transform: rotate(180deg);
+}
